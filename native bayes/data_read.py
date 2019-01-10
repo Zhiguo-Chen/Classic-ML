@@ -2,7 +2,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 # from numpy import *
-import random
 import math
 from IPython.display import display
 
@@ -11,15 +10,15 @@ pi = math.pi
 data_path = './diabetes.csv'
 
 raw_dataset = pd.read_csv(filepath_or_buffer=data_path)
-print(raw_dataset)
-print(raw_dataset.columns)
-print(len(raw_dataset))
-print(raw_dataset.head())
+# print(raw_dataset)
+# print(raw_dataset.columns)
+# print(len(raw_dataset))
+# print(raw_dataset.head())
 positive = raw_dataset[raw_dataset['Outcome'] == 1]
 negative = raw_dataset[raw_dataset['Outcome'] == 0]
 # print(raw_dataset['Outcome'] == 1)
-print(len(positive))
-print(len(negative))
+# print(len(positive))
+# print(len(negative))
 
 print('=====')
 
@@ -46,7 +45,11 @@ def get_raw_data():
 
 
 def main():
-    print(list(raw_dataset.index.values))
+    # print(list(raw_dataset.index.values))
+    df = pd.DataFrame(raw_dataset, columns=raw_dataset.columns.drop('Outcome'))
+    # print(raw_dataset.columns.values)
+    # print(pd.DataFrame(raw_dataset['BMI']))
+    print(raw_dataset.index[0, 3, 7, 8])
 
 
 if __name__ == "__main__":
